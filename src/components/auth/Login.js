@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { Fragment, useState, useContext } from 'react';
 import AlertasContext from '../../context/alertas/alertasContext';
 
 const Login = () => {
@@ -6,8 +6,6 @@ const Login = () => {
     const alertasContext = useContext(AlertasContext);
 
     const { alerta, mostrarAlerta } = alertasContext;
-
-    console.log(alerta);
 
     const [user, newUser] = useState({
         correo: '',
@@ -22,27 +20,28 @@ const Login = () => {
         if (correo.trim() === '' || password.trim() === '') {
             mostrarAlerta("Todos los campos son obligatorios", "alert-danger")
             return;
-        } 
+        }
 
-        
+
 
     }
 
     const onChange = (e) => {
         newUser({
             ...user,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         });
     }
 
     return (
-        <div className="container">
+
+        <div>
             <form
                 onSubmit={onSubmit}
             >
                 <div className="form-group">
                     <label>Correo: </label>
-                    <input 
+                    <input
                         type="text"
                         name="correo"
                         onChange={onChange}
@@ -51,7 +50,7 @@ const Login = () => {
                 </div>
                 <div className="form-group">
                     <label>Password: </label>
-                    <input 
+                    <input
                         type="password"
                         name="password"
                         onChange={onChange}
@@ -59,7 +58,7 @@ const Login = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <input 
+                    <input
                         type="submit"
                         value="Ingresar"
                         className="btn btn-primary"
@@ -68,11 +67,11 @@ const Login = () => {
 
             </form>
 
-            {alerta ? 
+            {alerta ?
                 <div className={`alert alert-dismissible ${alerta.type} mt-4`}>
                     <strong>{alerta.mensaje}</strong>
                 </div>
-            : null}
+                : null}
 
         </div>
     )
