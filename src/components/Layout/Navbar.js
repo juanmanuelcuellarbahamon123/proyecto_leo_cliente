@@ -5,7 +5,6 @@ import {
     Button 
 } from '@material-ui/core'
 import { NavbarStyles } from '../../styles/Navbar';
-import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -19,24 +18,21 @@ const Navbar = () => {
                         className={styles.title}
                         variant="text" 
                         color="inherit"
-                        component={Link}
-                        to="/"
+                        href="/"
                     >
                         Titulo pagina
                     </Button>
                     <Button 
                         variant="text" 
                         color="inherit"
-                        component={Link}
-                        to="/login"
+                        href="/login"
                     >
                         Login
                     </Button>
                     <Button 
                         variant="text" 
                         color="inherit"
-                        component={Link}
-                        to="/registro"
+                        href="/registro"
                     >
                         Registro
                     </Button>

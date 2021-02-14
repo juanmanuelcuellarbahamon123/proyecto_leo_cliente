@@ -3,7 +3,7 @@ import {
     List,
     ListItem,
     ListItemText,
-    ListItemIcon
+    ListItemIcon,
 } from '@material-ui/core';
 import { AddCircle } from '@material-ui/icons';
 import { NavLink } from 'react-router-dom';

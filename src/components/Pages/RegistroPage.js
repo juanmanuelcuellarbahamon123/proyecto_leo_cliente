@@ -1,19 +1,20 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography'
 import Navbar from '../Layout/Navbar';
+import { FormStyles } from '../../styles/Form';
+import Registro from '../auth/Registro';
 
 const RegistroPage = () => {
+
+    const styles = FormStyles();
+
     return (
         <div>
             <Navbar />
-            <Typography 
-                variant="h1" 
-                color="initial"
-            >
-                RegistroPage
-            </Typography>
+            <div className={styles.caja}>
+                <Registro />
+            </div>
         </div>
-    )
+    );
 }
 
 export default RegistroPage;
